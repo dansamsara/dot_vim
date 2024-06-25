@@ -7,7 +7,7 @@ local chat = require("CopilotChat")
 local select = require("CopilotChat.select")
 local utils = require("utils")
 chat.setup({
-  model = "claude-3.5-sonnet",
+  model = "claude-3.7-sonnet",
 
   window = {
     -- layout = "float", -- 'vertical', 'horizontal', 'float', 'replace'
@@ -43,7 +43,7 @@ chat.setup({
       mapping = "<leader>ccd",
     },
     Commit = {
-      prompt = '> #git:staged\n\nWrite a commit message following the example in comments at the top of the staged diff. Use the commitizen convention where appropriate. Ensure the title has a maximum of 50 characters and the message is wrapped at 72 characters. Replace everything before the colon in the title with the code area and subarea derived from the most commonly changed file paths in the diff. The code and subarea should be in the format "code/subarea". Explain the change in detail and why it is necessary. Add this message at the top and include the original, unaltered content below it.',
+      prompt = "> #git:staged\n\nWrite a commit message. Use the format described in comments at the top before the listed changes. Use the commitizen convention where appropriate. Ensure the title has a maximum of 50 characters and the message is wrapped at 72 characters. Explain the change in detail and why it is necessary. Add this message at the top and include the original, unaltered content below it so the diff can be easily applied.",
       mapping = "<leader>ccc",
       description = "Git commit message",
     },
