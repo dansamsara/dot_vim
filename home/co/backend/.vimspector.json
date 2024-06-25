@@ -1,0 +1,142 @@
+{
+  "adapters": {
+    "delve-remote": {
+      "name": "delve",
+      "port": "12345"
+    },
+    "delve-slow": {
+      "extends": "delve",
+      "sync_timeout": 100000,
+      "async_timeout": 100000
+    }
+  },
+  "configurations": {
+    "Go Debug": {
+      "default": true,
+      "adapter": "delve-slow",
+      "filetypes": ["go"],
+      // https://github.com/golang/vscode-go/blob/master/docs/debugging.md#configuration
+      "configuration": {
+        "request": "launch",
+        "program": "${fileDirname}",
+        "mode": "debug",
+        "env": {
+          // go/src/samsaradev.io/app/taskrunner/main.go
+          "EXPERIMENTAL_TASKRUNNER_NEWTUI": "0"
+
+          // go/src/samsaradev.io/infra/deploy/cmd/servicebuilder/main.go
+          // "BUILDKITE_API_TOKEN": "${BK_API_TOKEN_CLI}",
+          // "DEPLOY_ONLY_THESE_SERVICES": "grpcdebug"
+
+          // rootgqlservice
+          // "GRPC_PORT": "8908"
+        },
+
+        "args": [
+        // go/src/samsaradev.io/infra/devtools/cmd/awsssologin/main.go
+        // "--profile=${AWS_DEFAULT_PROFILE}"
+
+        // go/src/samsaradev.io/infra/deploy/cmd/servicebuilder/main.go
+        // "--cloud=us-prod",
+        // "--cells=allmain",
+        // "--cells=sf2",
+        // "--selectServices=grpcdebug",
+        // "--sha=447b85950f4f"
+
+        // go/src/samsaradev.io/app/taskrunner/main.go
+        // "proto/compile"
+        // "devmetrics/setup"
+
+        // go/src/samsaradev.io/infra/api/app/apiserver/main.go
+        //   "--port=8008"
+
+        // go/src/samsaradev.io/controllers/api/goa/goagen/main.go
+        //   "--version=v2.2.5",
+        //   "--output=/home/ubuntu/co/backend/go/src/samsaradev.io/cojtrollers/api/goa/.generated/v2024_02_06",
+        //   "--cmd=\"$$ goa gen samsaradev.io/controllers/api/goa/design/endpoints -o generated/v2024_02_06\"",
+        //   "--gen=docs",
+        //   "--visibility=internal",
+        //   "--apiversion=2024_02_06",
+        //   "--services=all"
+
+        // go/src/samsaradev.io/infra/api/app/apiusagetracker/main.go
+        // "--org_ids",
+        // "30"
+
+        // go/src/samsaradev.io/controllers/api/goa/webhookgen/main.go
+        //   "--version=v2.2.5",
+        //   "--output=/home/ubuntu/co/backend/go/src/samsaradev.io/controllers/api/goa/.generated/webhooks/v2024_02_27",
+        //   "--cmd=\"$$ goa gen samsaradev.io/controllers/api/goa/design/webhooks -o generated/webhooks/v2024_02_27\"",
+        //   "--gen=docs",
+        //   "--visibility=public",
+        //   "--apiversion=2024_02_27"
+
+        ]
+
+        // "dlvToolPath": "/home/ubuntu/go/bin/dlv"
+      }
+    },
+    "Go Debug Remote": {
+      "adapter": "delve-remote",
+      "filetypes": [ "go" ],
+      "configuration": {
+        "request": "attach",
+        "mode": "remote"
+      }
+    },
+    "Go Debug Test": {
+      "adapter": "delve-slow",
+      "filetypes": ["go"],
+      "variables": {
+        // "dlvFlags": "--check-go-version=false"
+      },
+      "configuration": {
+        "request": "launch",
+        "mode": "test",
+        "program": "${fileDirname}",
+        "args": [
+          "-test.run",
+          "^${Test}$$"
+        ]
+        // "dlvToolPath": "/home/ubuntu/go/bin/dlv"
+      }
+    },
+    "apiserver": {
+      "adapter": "delve-slow",
+      "configuration": {
+        "request": "launch",
+        "mode": "debug",
+        "program": "${workspaceRoot}/go/src/samsaradev.io/infra/api/app/apiserver",
+        "host": "127.0.0.1",
+        "env": {},
+        "args": ["--port", "8008"]
+      }
+    },
+    // Test fails to load DOM. Need to use browser adapter?
+    "Jest Current File": {
+      "adapter": "js-debug",
+      "filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+      "breakpoints": {
+        "exception": {
+          "caught": "N",
+          "uncaught": "Y"
+        }
+      },
+      "configuration": {
+        "request": "launch",
+        "type": "pwa-node",
+        // "stopOnEntry": true,
+        "console": "integratedTerminal",
+        "program": "${workspaceFolder}/node_modules/.bin/jest",
+        "args": [
+          "${fileBasenameNoExtension}"
+        ],
+        "internalConsoleOptions": "neverOpen",
+        "disableOptimisticBPs": true,
+        "cwd": "${workspaceRoot}"
+      }
+    }
+  }
+}
+
+// vi: ft=jsonc

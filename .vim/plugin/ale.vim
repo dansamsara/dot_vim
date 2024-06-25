@@ -8,7 +8,8 @@ let g:ale_lint_on_enter = 1
 " After open only validate on save
 let g:ale_lint_on_text_changed = 'never'
 
-let g:airline#extensions#ale#enabled = 0
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#checking_symbol = 'ale...'
 
 " Use standard vim diagnostics for better coc.nvim compatibility
 let g:ale_use_neovim_diagnostics_api = 0 " default has('nvim-0.6')

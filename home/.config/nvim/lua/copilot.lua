@@ -4,10 +4,10 @@
 -- https://github.com/CopilotC-Nvim/CopilotChat.nvim
 -- https://jsuarez.dev/blog/copilot_chat_neovim/
 local chat = require("CopilotChat")
-local select = require("CopilotChat.select")
 local utils = require("utils")
 chat.setup({
-  model = "claude-haiku-4.5",
+  -- model = "claude-sonnet-4",
+  model = "claude-opus-4.5",
 
   highlight_headers = false,
   separator = "---",
@@ -77,16 +77,11 @@ chat.setup({
   },
 })
 
--- Chat with Copilot about visual selection
-vim.api.nvim_create_user_command("CopilotChatVisual", function(args)
-  chat.ask(args.args, { selection = select.visual })
-end, { nargs = "*", range = true })
-
 -- Inline chat with Copilot
 vim.api.nvim_create_user_command("CopilotChatInline", function(_)
   local input = vim.fn.input("Inline Chat: ")
   chat.ask(input, {
-    selection = select.visual,
+    selection = "visual",
     window = {
       layout = "float",
       relative = "cursor",
@@ -99,7 +94,7 @@ end, { nargs = "*", range = true })
 
 -- Restore CopilotChatBuffer
 vim.api.nvim_create_user_command("CopilotChatBuffer", function(args)
-  chat.ask(args.args, { selection = select.buffer })
+  chat.ask(args.args, { selection = "buffer" })
 end, { nargs = "*", range = true })
 
 -- Quick chat with Copilot. Context defaults to the current buffer
