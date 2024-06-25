@@ -1,0 +1,15 @@
+{
+  "go.goplsPath": "~/co/backend/bin/gopls",
+  "go.trace.server": "off",
+  "css.format.enable": false,
+  "less.format.enable": false,
+  "scss.format.enable": false,
+  "codeLens.enable": true,
+  "diagnostic.messageTarget": "echo",
+  "diagnostic.virtualText": true,
+  "go.checkForUpdates": "disabled",
+  "tsserver.enable": true,
+  "tsserver.log": "off",
+  "tsserver.maxTsServerMemory": 8192,
+  "typescript.preferences.importModuleSpecifier": "non-relative"
+}

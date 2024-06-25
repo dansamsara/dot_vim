@@ -1,3 +1,5 @@
+require("coverage").setup()
+
 local is_render_markdown_available, render_markdown = pcall(require, "render-markdown")
 if is_render_markdown_available then
   render_markdown.setup({

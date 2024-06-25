@@ -7,7 +7,7 @@ local chat = require("CopilotChat")
 local select = require("CopilotChat.select")
 local utils = require("utils")
 chat.setup({
-  -- model = "claude-3.5-sonnet",
+  model = "claude-3.7-sonnet",
 
   highlight_headers = false,
   separator = "---",
