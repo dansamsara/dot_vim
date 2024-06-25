@@ -20,9 +20,11 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'Chiel92/vim-autoformat', { 'on': ['Autoformat', 'CurrentFormat'] }
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' } | Plug 'nvim-lua/plenary.nvim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'Valloric/ListToggle'
 Plug 'andymass/vim-matchup'
+Plug 'andythigpen/nvim-coverage' | Plug 'nvim-lua/plenary.nvim'
 Plug 'antoinemadec/coc-fzf', { 'branch': 'release' }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss'] }
 Plug 'artnez/vim-wipeout', { 'on': ['Wipeout'] }
@@ -52,10 +54,12 @@ Plug 'mhinz/vim-signify'
 Plug 'nanotech/jellybeans.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'powerman/vim-plugin-AnsiEsc', { 'on': 'AnsiEsc' }
 Plug 'preservim/vim-indent-guides'
 Plug 'puremourning/vimspector'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
+Plug 'terrastruct/d2-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-abolish'

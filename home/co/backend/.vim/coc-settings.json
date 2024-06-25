@@ -1,0 +1,30 @@
+{
+  "go.goplsPath": "~/co/backend/bin/gopls",
+  "go.trace.server": "off",
+  "css.format.enable": false,
+  "less.format.enable": false,
+  "scss.format.enable": false,
+  "codeLens.enable": true,
+  "diagnostic.messageTarget": "echo",
+  "diagnostic.virtualText": true,
+  "go.checkForUpdates": "disabled",
+  "go.goplsOptions": {
+    "codelenses": {
+      "test": true
+    },
+    // https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
+    "hints": {
+      "assignVariableTypes": false,
+      "compositeLiteralFields": true,
+      "compositeLiteralTypes": false,
+      "constantValues": true,
+      "functionTypeParameters": true,
+      "parameterNames": false,
+      "rangeVariableTypes": true
+    },
+  },
+  "tsserver.enable": true,
+  "tsserver.log": "off",
+  "tsserver.maxTsServerMemory": 5120,
+  "typescript.preferences.importModuleSpecifier": "non-relative"
+}
