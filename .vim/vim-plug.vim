@@ -11,6 +11,28 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+if exists('g:vscode')
+  " Only load these plugins in VSCode
+  Plug 'AndrewRadev/sideways.vim'
+  Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'AndrewRadev/switch.vim'
+  Plug 'Chiel92/vim-autoformat', { 'on': ['Autoformat', 'CurrentFormat'] }
+  Plug 'MarcWeber/vim-addon-local-vimrc'
+  Plug 'andymass/vim-matchup'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'tommcdo/vim-lion'
+  Plug 'tpope/vim-abolish'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-eunuch'
+  Plug 'tpope/vim-obsession'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'wincent/loupe'
+  call plug#end()
+  finish
+endif
+
 " ---------------
 " Plug Bundles
 " ---------------
@@ -52,10 +74,12 @@ Plug 'mhinz/vim-signify'
 Plug 'nanotech/jellybeans.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'powerman/vim-plugin-AnsiEsc', { 'on': 'AnsiEsc' }
 Plug 'preservim/vim-indent-guides'
 Plug 'puremourning/vimspector'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
+Plug 'terrastruct/d2-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-abolish'
@@ -76,6 +100,7 @@ Plug 'yssl/QFEnter'
 if has('nvim')
   Plug 'CopilotC-Nvim/CopilotChat.nvim'
   Plug 'MeanderingProgrammer/render-markdown.nvim'
+  Plug 'andythigpen/nvim-coverage'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'ravitemer/mcphub.nvim', { 'do': 'npm install -g mcp-hub@latest' }
