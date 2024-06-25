@@ -52,10 +52,12 @@ Plug 'mhinz/vim-signify'
 Plug 'nanotech/jellybeans.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'powerman/vim-plugin-AnsiEsc', { 'on': 'AnsiEsc' }
 Plug 'preservim/vim-indent-guides'
 Plug 'puremourning/vimspector'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
+Plug 'terrastruct/d2-vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-abolish'
@@ -74,7 +76,9 @@ Plug 'wincent/loupe'
 Plug 'yssl/QFEnter'
 
 if has('nvim')
-  Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' } | Plug 'nvim-lua/plenary.nvim'
+  Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' }
+  Plug 'andythigpen/nvim-coverage'
+  Plug 'nvim-lua/plenary.nvim'
 endif
 
 " Add plugins to &runtimepath
