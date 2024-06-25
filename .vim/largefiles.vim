@@ -7,7 +7,7 @@ augroup END
 
 function! LargeFile()
   " no syntax highlighting etc
-  set eventignore+=FileType
+  " set eventignore+=FileType
   " save memory when other file is viewed
   setlocal bufhidden=unload
   " is read-only (write with :w new_filename)
