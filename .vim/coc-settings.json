@@ -26,10 +26,58 @@
     {
       "fileMatch": [".gadgets.json", ".gadgets.d/*.json"],
       "url": "https://puremourning.github.io/vimspector/schema/gadgets.schema.json"
+    },
+    {
+      "fileMatch": ["CODEREVIEW"],
+      "url": "usr/local/etc/vim/codereview.schema.json"
+    },
+    {
+      "fileMatch": ["featureconfigs.json"],
+      "url": "usr/local/etc/vim/featureconfigs.schema.json"
+    },
+    {
+      "fileMatch": ["*taskrunner.json"],
+      "url": "usr/local/etc/vim/taskrunner.schema.json"
     }
   ],
+  "snippets.ultisnips.pythonPrompt": false,
+  "yaml.schemas": {
+    "docker/dockerregistry/schema-validator/buildkite-schema-custom.json": [
+      "buildkite.y*ml",
+      "*buildkite/**/pipeline.*.y*ml",
+    ],
+  },
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf", "terraform-vars"],
+      // Copied from VSCode Terraform extension
+      "initializationOptions": {
+        "validation": {
+          "enableEnhancedValidation": true
+        },
+        "experimentalFeatures": {
+          "validateOnSave": false,
+          "prefillRequiredFields": false
+        },
+        "ignoreSingleFileWarning": false,
+        "terraform": {
+          "path": "",
+          "timeout": "",
+          "logFilePath": ""
+        },
+        "indexing": {
+          "ignorePaths": [],
+          "ignoreDirectoryNames": []
+        }
+      },
+      "settings": {}
+    }
+  },
   "suggest.autoTrigger": "trigger",
   "suggest.triggerCompletionWait": 50,
   // https://github.com/xiyaowong/coc-sumneko-lua/blob/main/settings.md
-  "sumneko-lua.enableNvimLuaDev": true
+  "sumneko-lua.enableNvimLuaDev": true,
+  "sumneko-lua.checkUpdate": false
 }
