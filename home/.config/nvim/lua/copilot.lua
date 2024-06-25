@@ -6,7 +6,8 @@
 local chat = require("CopilotChat")
 local utils = require("utils")
 chat.setup({
-  model = "claude-haiku-4.5",
+  -- model = "claude-sonnet-4",
+  model = "claude-opus-4.5",
 
   highlight_headers = false,
   separator = "---",
