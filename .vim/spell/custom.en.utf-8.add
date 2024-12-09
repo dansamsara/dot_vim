@@ -186,3 +186,6 @@ Buildkite
 BKOD
 graphql
 backend
+YAML
+Dockerfile
+buildkite
