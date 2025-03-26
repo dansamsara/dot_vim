@@ -11,6 +11,29 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+if exists('g:vscode')
+  " Only load these plugins in VSCode
+  Plug 'AndrewRadev/sideways.vim'
+  Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'AndrewRadev/switch.vim'
+  Plug 'Chiel92/vim-autoformat', { 'on': ['Autoformat', 'CurrentFormat'] }
+  Plug 'MarcWeber/vim-addon-local-vimrc'
+  Plug 'andymass/vim-matchup'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'tommcdo/vim-lion'
+  Plug 'tpope/vim-abolish'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-eunuch'
+  Plug 'tpope/vim-obsession'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'wincent/loupe'
+  call plug#end()
+  finish
+endif
+
 " ---------------
 " Plug Bundles
 " ---------------
