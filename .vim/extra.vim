@@ -1,3 +1,13 @@
+" ------
+" VSCode
+" ------
+if exists('g:vscode')
+  " The normal bindings for these break in VSCode.
+  nnoremap <silent> <leader>hs :split
+  nnoremap <silent> <leader>vs :vsplit
+  nnoremap <silent> <leader>tn :echom 'not supported'<CR>
+endif
+
 " ------------
 " terraform-ls
 " ------------
