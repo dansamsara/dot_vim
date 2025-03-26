@@ -1,5 +1,9 @@
 "kien/rainbow_parentheses.vim
 
+if exists('g:vscode')
+  finish
+endif
+
 " Enable Rainbow Parentheses
 autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
