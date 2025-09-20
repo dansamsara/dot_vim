@@ -2,6 +2,9 @@ if vim.g.vscode then
   return
 end
 
+require("claude").setup({
+  command = os.getenv("HOME") .. "/.bin/claude",
+})
 require("coverage").setup()
 
 local is_render_markdown_available, render_markdown = pcall(require, "render-markdown")
