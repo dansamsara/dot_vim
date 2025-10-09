@@ -120,13 +120,13 @@ function! s:CoverageClear()
 endfunction
 
 " Delete the coverage file from the file system.
-function! s:CoverageDelete()
+function! g:CoverageDelete()
   if filereadable(s:go_coverage_file)
     call delete(s:go_coverage_file)
   endif
 endfunction
 
-function! s:ToggleCoverage()
+function! g:CoverageToggle()
   if &filetype ==# 'go'
     " nvim-coverage looks for go.mod in the current directory and up.
     execute 'cd' s:path_go
@@ -229,8 +229,8 @@ nnoremap <silent><leader>xtf :call <SID>TestRun("File", 0)<CR>
 nnoremap <silent><leader>xtl :call <SID>TestRun("Last", 0)<CR>
 nnoremap <silent><leader>xtd :call <SID>TestDebugNearest()<CR>
 nnoremap <silent><leader>xts :call <SID>TestSnapshot()<CR>
-nnoremap <silent><leader>cc :call <SID>ToggleCoverage()<CR>
-nnoremap <silent><leader>cd :call <SID>CoverageDelete()<CR>
-nnoremap <silent><leader>cs :CoverageSummary<CR>
+" nnoremap <silent><leader>cc :call <SID>CoverageToggle()<CR>
+" nnoremap <silent><leader>cd :call <SID>CoverageDelete()<CR>
+" nnoremap <silent><leader>cs :CoverageSummary<CR>
 
 nnoremap <silent><leader>ll <Plug>(ale_lint)
