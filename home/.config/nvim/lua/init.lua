@@ -4,6 +4,11 @@ end
 
 require("claude").setup({
   command = os.getenv("HOME") .. "/.bin/claude",
+  prompts = {
+    Commit = {
+      prompt = "Write a commit message for this change following the style guide in @/home/ubuntu/co/backend/.cursor/rules/engbook/git-commit-style-guide.mdc",
+    }
+  }
 })
 require("coverage").setup()
 
