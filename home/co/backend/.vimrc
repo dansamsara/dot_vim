@@ -46,7 +46,6 @@ let g:ale_go_golangci_lint_package = 1
 let g:ale_go_staticcheck_lint_package = 1
 let g:ale_go_staticcheck_options = '-tests=false'
 let g:ale_javascript_eslint_options = '--cache -c .eslintrc-incremental.js'
-let g:ale_sh_shfmt_options = '-i 2'
 let g:ale_yaml_yamllint_options = '-c .yamllintconfig'
 
 let g:ale_linters = {}
