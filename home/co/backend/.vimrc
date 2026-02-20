@@ -2,7 +2,7 @@
 let s:project_root = expand('<sfile>:p:h')
 " Directory for Samsara go source.
 let s:path_go = s:project_root . '/go/src/samsaradev.io'
-let s:go_coverage_file = s:path_go . '/coverage.out'
+let s:go_coverage_file = s:project_root . '/coverage.out'
 " Base golangci-lint config.
 let s:golangci_lint_options = '--config=' . s:path_go . '/.golangci-localdev.yml '
       \ . '--timeout 15m '
@@ -124,19 +124,11 @@ function! g:CoverageDelete()
 endfunction
 
 function! g:CoverageToggle()
-  if &filetype ==# 'go'
-    " nvim-coverage looks for go.mod in the current directory and up.
-    execute 'cd' s:path_go
-  endif
   if exists('g:coverage_enabled') && g:coverage_enabled == 1
     call s:CoverageClear()
   else
     let g:coverage_enabled = 1
     :Coverage
-  endif
-  if &filetype ==# 'go'
-    " restore the project root for normal operation.
-    execute 'cd' s:project_root
   endif
 endfunction
 
